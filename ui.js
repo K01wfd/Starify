@@ -4,6 +4,8 @@ const lat = document.getElementById('lat');
 const azimuth = document.getElementById('azimuth');
 const pitch = document.getElementById('pitch');
 
+const errorMessage = document.getElementById('error-message');
+
 function updateLocation(coords) {
   long.textContent = coords.long;
   lat.textContent = coords.lat;
@@ -12,4 +14,8 @@ function updateLocation(coords) {
 function updateOrientation(orientation) {
   azimuth.textContent = orientation.azimuth;
   pitch.textContent = orientation.pitch;
+}
+
+function setErrorMessage(message) {
+  errorMessage.textContent = message;
 }
