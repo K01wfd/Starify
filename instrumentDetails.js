@@ -11,13 +11,16 @@ navigator.geolocation.getCurrentPosition((pos) => {
   }
 });
 
-window.addEventListener('deviceorientation', (e) => {
-  try {
-    instOrientation.azimuth = e.alpha;
-    instOrientation.pitch = e.beta;
-    updateOrientation(instOrientation);
-    setErrorMessage(e.timeStamp);
-  } catch (error) {
-    setErrorMessage(error.message);
-  }
-});
+if (window.DeviceOrientationEvent) {
+  window.addEventListener('deviceorientation', (e) => {
+    try {
+      instOrientation.azimuth = e.alpha;
+      instOrientation.pitch = e.beta;
+      console.log(e);
+      updateOrientation(instOrientation);
+      setErrorMessage(e.timeStamp);
+    } catch (error) {
+      setErrorMessage(error.message);
+    }
+  });
+}

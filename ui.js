@@ -12,8 +12,8 @@ function updateLocation(coords) {
 }
 
 function updateOrientation(orientation) {
-  azimuth.textContent = orientation.azimuth;
-  pitch.textContent = orientation.pitch;
+  azimuth.textContent = `Azimuth is ${orientation.azimuth}`;
+  pitch.textContent = `Pitch is ${orientation.pitch}`;
 }
 
 function setErrorMessage(message) {
