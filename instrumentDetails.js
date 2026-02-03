@@ -11,11 +11,12 @@ navigator.geolocation.getCurrentPosition((pos) => {
   }
 });
 
-window.addEventListener('deviceorientationabsolute', (e) => {
+window.addEventListener('deviceorientation', (e) => {
   try {
     instOrientation.azimuth = e.alpha;
     instOrientation.pitch = e.beta;
     updateOrientation(instOrientation);
+    setErrorMessage(e.timeStamp);
   } catch (error) {
     setErrorMessage(error.message);
   }
